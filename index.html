@@ -185,25 +185,78 @@
                 font-size: 5vw;
             }
         }
+
+        /* Estilo para a foto */
+        .photo-container {
+            position: absolute;
+            top: 5%;
+            right: 5%;
+            border-radius: 50%;
+            border: 8px solid #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .photo-container img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
     </style>
 </head>
 <body>
+
     <h1>For my girl, Anna Júlia</h1>
 
     <div class="heart">❤️‍🔥</div>
 
-    <p>"O Senhor te guiará continuamente, e fartará a tua alma em lugares secos, e fortificará os teus ossos; e serás como um jardim regado, e como um manancial cujas águas nunca faltam." — Isaías 58:11</p>
+    <div class="photo-container">
+        <img src="foto-de-casal.jpg" alt="Anna Júlia e Eu">
+    </div>
 
-    <div class="quote"> "Você é incrível do jeitinho que é, e tenho sorte de compartilhar a vida ao seu lado" ❤️</div>
+    <p id="versiculo">"O Senhor te guiará continuamente, e fartará a tua alma em lugares secos, e fortificará os teus ossos; e serás como um jardim regado, e como um manancial cujas águas nunca faltam." — Isaías 58:11</p>
+
+    <div id="mensagem" class="quote"> "Você é incrível do jeitinho que é, e tenho sorte de compartilhar a vida ao seu lado" ❤️</div>
 
     <!-- Emojis de corações abaixo da citação -->
-
+    <div class="floating-hearts">
+        <span>❤️</span>
+        <span>💖</span>
+        <span>💗</span>
+    </div>
 
     <div class="flower"></div>
 
     <div class="small-heart" style="left: 10%;"></div>
     <div class="small-heart" style="left: 70%;"></div>
 
+    <script>
+        const versiculos = [
+            '"O Senhor é o meu pastor; nada me faltará." — Salmos 23:1',
+            '"O Senhor te guiará continuamente, e fartará a tua alma em lugares secos, e fortificará os teus ossos; e serás como um jardim regado, e como um manancial cujas águas nunca faltam." — Isaías 58:11',
+            '"O Senhor é a minha luz e a minha salvação; a quem temerei? O Senhor é a força da minha vida; de quem me recearei?" — Salmos 27:1',
+            '"Porque eu bem sei os pensamentos que penso de vós, diz o Senhor, pensamentos de paz e não de mal, para vos dar o fim que esperais." — Jeremias 29:11'
+        ];
+
+        const mensagens = [
+            '"Você é incrível do jeitinho que é, e tenho sorte de compartilhar a vida ao seu lado" ❤️',
+            '"A cada dia ao seu lado é um presente. Eu te amo muito, Anna Júlia!" ❤️',
+            '"Nosso amor é um presente que eu agradeço todos os dias. Você é a razão do meu sorriso." ❤️',
+            '"Eu agradeço a Deus por cada momento ao seu lado. Você é a melhor parte do meu dia." ❤️'
+        ];
+
+        function atualizarConteudo() {
+            const versiculo = versiculos[Math.floor(Math.random() * versiculos.length)];
+            const mensagem = mensagens[Math.floor(Math.random() * mensagens.length)];
+
+            document.getElementById('versiculo').innerText = versiculo;
+            document.getElementById('mensagem').innerText = mensagem;
+        }
+
+        setInterval(atualizarConteudo, 50000); // Atualiza a cada 50 segundos
+
+    </script>
 </body>
 </html>
+
 
