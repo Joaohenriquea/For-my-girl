@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Para a Anna Júlia</title>
     <style>
+        /* Seu estilo continua o mesmo */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -195,7 +196,7 @@
 
     <p id="versiculo">"O Senhor te guiará continuamente, e fartará a tua alma em lugares secos, e fortificará os teus ossos; e serás como um jardim regado, e como um manancial cujas águas nunca faltam." — Isaías 58:11</p>
 
-    <div id="mensagem" class="quote"> "Você é incrível do jeitinho que é, e tenho sorte de compartilhar a vida ao seu lado" ❤️</div>
+    <div id="mensagem" class="quote">"Você é incrível do jeitinho que é, e tenho sorte de compartilhar a vida ao seu lado" ❤️</div>
 
     <!-- Emojis de corações abaixo da citação -->
     <div class="floating-hearts">
@@ -382,19 +383,28 @@ const mensagens = [
 ];
 
 
+        const versiculoElement = document.getElementById('versiculo');
+        const mensagemElement = document.getElementById('mensagem');
 
-        function atualizarConteudo() {
-            const versiculo = versiculos[Math.floor(Math.random() * versiculos.length)];
-            const mensagem = mensagens[Math.floor(Math.random() * mensagens.length)];
+        // Recuperar o versículo e a mensagem do localStorage
+        const versiculoSalvo = localStorage.getItem('versiculo');
+        const mensagemSalva = localStorage.getItem('mensagem');
 
-            document.getElementById('versiculo').innerText = versiculo;
-            document.getElementById('mensagem').innerText = mensagem;
+        if (versiculoSalvo) {
+            versiculoElement.textContent = versiculoSalvo;
+        } else {
+            const randomVersiculo = versiculos[Math.floor(Math.random() * versiculos.length)];
+            versiculoElement.textContent = randomVersiculo;
+            localStorage.setItem('versiculo', randomVersiculo);
         }
 
-        setInterval(atualizarConteudo, 13000); // Atualiza a cada 20 segundos
-
+        if (mensagemSalva) {
+            mensagemElement.textContent = mensagemSalva;
+        } else {
+            const randomMensagem = mensagens[Math.floor(Math.random() * mensagens.length)];
+            mensagemElement.textContent = randomMensagem;
+            localStorage.setItem('mensagem', randomMensagem);
+        }
     </script>
 </body>
 </html>
-
-
