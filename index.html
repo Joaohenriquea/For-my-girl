@@ -185,23 +185,6 @@
                 font-size: 5vw;
             }
         }
-
-        /* Estilo para a foto */
-        .photo-container {
-            position: absolute;
-            top: 5%;
-            right: 5%;
-            border-radius: 50%;
-            border: 8px solid #fff;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .photo-container img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 50%;
-        }
     </style>
 </head>
 <body>
@@ -209,10 +192,6 @@
     <h1>For my girl, Anna Júlia</h1>
 
     <div class="heart">❤️‍🔥</div>
-
-    <div class="photo-container">
-        <img src="foto-de-casal.jpg" alt="Anna Júlia e Eu">
-    </div>
 
     <p id="versiculo">"O Senhor te guiará continuamente, e fartará a tua alma em lugares secos, e fortificará os teus ossos; e serás como um jardim regado, e como um manancial cujas águas nunca faltam." — Isaías 58:11</p>
 
@@ -231,19 +210,178 @@
     <div class="small-heart" style="left: 70%;"></div>
 
     <script>
-        const versiculos = [
-            '"O Senhor é o meu pastor; nada me faltará." — Salmos 23:1',
-            '"O Senhor te guiará continuamente, e fartará a tua alma em lugares secos, e fortificará os teus ossos; e serás como um jardim regado, e como um manancial cujas águas nunca faltam." — Isaías 58:11',
-            '"O Senhor é a minha luz e a minha salvação; a quem temerei? O Senhor é a força da minha vida; de quem me recearei?" — Salmos 27:1',
-            '"Porque eu bem sei os pensamentos que penso de vós, diz o Senhor, pensamentos de paz e não de mal, para vos dar o fim que esperais." — Jeremias 29:11'
-        ];
+const versiculos = [
+    '"O Senhor é o meu pastor; nada me faltará." — Salmos 23:1',
+    '"Os justos florescerão como a palmeira; crescerão como o cedro do Líbano." — Salmos 92:12',
+    '"O Senhor é bom para todos, e as suas misericórdias estão sobre todas as suas obras." — Salmos 145:9',
+    '"O Senhor te guiará continuamente e fartará a tua alma nos lugares áridos, e fortificará os teus ossos; e serás como um jardim regado, como um manancial cujas águas nunca falham." — Isaías 58:11',
+    '"Em tudo, dai graças; porque esta é a vontade de Deus em Cristo Jesus para convosco." — 1 Tessalonicenses 5:18',
+    '"O Senhor é o meu refúgio e a minha fortaleza, meu Deus, em quem confio." — Salmos 91:2',
+    '"Mas o Senhor é fiel; ele vos fortalecerá e vos guardará do maligno." — 2 Tessalonicenses 3:3',
+    '"Pois eu sei os planos que tenho para vós, diz o Senhor, planos de bem-estar e não de mal, para lhes dar um futuro e uma esperança." — Jeremias 29:11',
+    '"Aquele que habita no esconderijo do Altíssimo, à sombra do Onipotente descansará." — Salmos 91:1',
+    '"O Senhor é a minha luz e a minha salvação; de quem terei medo?" — Salmos 27:1',
+    '"Porque para Deus nada é impossível." — Lucas 1:37',
+    '"Eu sou o Senhor, que te ensina o que é bom, que te guia pelo caminho em que deves andar." — Isaías 48:17',
+    '"Confia no Senhor de todo o teu coração, e não te estribes no teu próprio entendimento." — Provérbios 3:5',
+    '"Ele levantou-me do poço de desespero, do lamaçal de sujeira, colocou os meus pés sobre uma rocha e firmou os meus passos." — Salmos 40:2',
+    '"O Senhor é justo em todos os seus caminhos e fiel em tudo o que faz." — Salmos 145:17',
+    '"O Senhor está perto de todos os que o invocam, de todos os que o invocam em verdade." — Salmos 145:18',
+    '"Aquele que confia no Senhor será como o monte de Sião, que não se abala, mas permanece para sempre." — Salmos 125:1',
+    '"Tu, Senhor, guardarás a nós, os que confiamos em Ti." — Salmos 31:23',
+    '"O Senhor é bom para todos, e as suas misericórdias estão sobre todas as suas obras." — Salmos 145:9',
+    '"Mas o Senhor é fiel; ele vos fortalecerá e vos guardará do maligno." — 2 Tessalonicenses 3:3',
+    '"Ele me levantou das profundezas, da lama e da miséria, e colocou os meus pés sobre uma rocha." — Salmos 40:2',
+    '"Porque os que esperam no Senhor renovarão as suas forças; subirão com asas como águias; correrão, e não se cansarão; andarão, e não se fatigarão." — Isaías 40:31',
+    '"Lança sobre ele toda a vossa ansiedade, porque ele tem cuidado de vós." — 1 Pedro 5:7',
+    '"Porque o Senhor é justo, e ama a justiça; os retos verão a sua face." — Salmos 11:7',
+    '"O Senhor te guiará continuamente, e fartará a tua alma nos lugares áridos, e fortificará os teus ossos; e serás como um jardim regado, como um manancial cujas águas nunca falham." — Isaías 58:11',
+    '"Em tudo dai graças; porque esta é a vontade de Deus em Cristo Jesus para vós." — 1 Tessalonicenses 5:18',
+    '"O Senhor é o meu refúgio e a minha fortaleza, meu Deus, em quem confio." — Salmos 91:2',
+    '"O Senhor é bom para todos, e as suas misericórdias estão sobre todas as suas obras." — Salmos 145:9',
+    '"O Senhor me ouve quando clamo por ele." — Salmos 4:3',
+    '"Não te deixarás abalar por temores de noite nem pela seta que voa de dia." — Salmos 91:5',
+    '"O Senhor está perto dos que têm o coração quebrantado e salva os de espírito abatido." — Salmos 34:18',
+    '"Porque a nossa leve e momentânea tribulação produz para nós um peso eterno de glória, muito excelente." — 2 Coríntios 4:17',
+    '"Bem-aventurados os que choram, porque serão consolados." — Mateus 5:4',
+    '"O Senhor é meu pastor; nada me faltará." — Salmos 23:1',
+    '"Ele acalma a tempestade, e as ondas se aquietam." — Salmos 107:29',
+    '"O Senhor é a minha força e o meu cântico, ele é a minha salvação." — Êxodo 15:2',
+    '"Aquele que habita no esconderijo do Altíssimo, à sombra do Onipotente descansará." — Salmos 91:1',
+    '"O Senhor é bom, é uma fortaleza no dia da angústia, e conhece os que nele confiam." — Naum 1:7',
+    '"O Senhor está perto de todos os que o invocam, de todos os que o invocam em verdade." — Salmos 145:18',
+    '"O Senhor é o meu pastor; nada me faltará." — Salmos 23:1',
+    '"Em paz me deito e logo pego no sono, porque só tu, Senhor, me fazes repousar seguro." — Salmos 4:8',
+    '"Aquieta-te e sabe que eu sou Deus." — Salmos 46:10',
+    '"Os que esperam no Senhor renovarão as suas forças; subirão com asas como águias; correrão, e não se cansarão; andarão, e não se fatigarão." — Isaías 40:31',
+    '"Se Deus é por nós, quem será contra nós?" — Romanos 8:31',
+    '"Os céus proclamam a glória de Deus, e o firmamento anuncia a obra das suas mãos." — Salmos 19:1',
+    '"Confia no Senhor de todo o teu coração e não te estribes no teu próprio entendimento." — Provérbios 3:5',
+    '"O Senhor não retarda a sua promessa, ainda que alguns a têm por tardia; mas é longânimo para convosco, não querendo que nenhum pereça, senão que todos venham a arrepender-se." — 2 Pedro 3:9',
+    '"Lançai sobre ele toda a vossa ansiedade, porque ele tem cuidado de vós." — 1 Pedro 5:7',
+    '"O Senhor é o meu pastor; nada me faltará." — Salmos 23:1',
+    '"Em paz me deito e logo pego no sono, porque só tu, Senhor, me fazes repousar seguro." — Salmos 4:8',
+    '"Deus é o nosso refúgio e fortaleza, socorro bem presente na angústia." — Salmos 46:1',
+    '"O Senhor é o meu pastor; nada me faltará." — Salmos 23:1',
+    '"Os céus proclamam a glória de Deus, e o firmamento anuncia a obra das suas mãos." — Salmos 19:1',
+    '"O Senhor é bom para todos, e as suas misericórdias estão sobre todas as suas obras." — Salmos 145:9',
+    '"O Senhor te guiará continuamente e fartará a tua alma nos lugares áridos, e fortificará os teus ossos; e serás como um jardim regado, como um manancial cujas águas nunca falham." — Isaías 58:11',
+    '"Pois eu sei os planos que tenho para vós, diz o Senhor, planos de bem-estar e não de mal, para lhes dar um futuro e uma esperança." — Jeremias 29:11',
+    '"O Senhor é o meu pastor; nada me faltará." — Salmos 23:1',
+    '"Ele me levantou do poço de desespero, do lamaçal de sujeira, colocou os meus pés sobre uma rocha e firmou os meus passos." — Salmos 40:2',
+    '"Eu sou o Senhor, que te ensina o que é bom, que te guia pelo caminho em que deves andar." — Isaías 48:17',
+    '"O Senhor é a minha força e o meu cântico, ele é a minha salvação." — Êxodo 15:2',
+    '"Em paz me deito e logo pego no sono, porque só tu, Senhor, me fazes repousar seguro." — Salmos 4:8',
+    '"O Senhor é bom para todos, e as suas misericórdias estão sobre todas as suas obras." — Salmos 145:9',
+    '"O Senhor é bom, é uma fortaleza no dia da angústia, e conhece os que nele confiam." — Naum 1:7',
+    '"Tu, Senhor, guardarás a nós, os que confiamos em Ti." — Salmos 31:23',
+    '"O Senhor é bom para todos, e as suas misericórdias estão sobre todas as suas obras." — Salmos 145:9',
+    '"Mas o Senhor é fiel; ele vos fortalecerá e vos guardará do maligno." — 2 Tessalonicenses 3:3',
+    '"Ele me levantou das profundezas, da lama e da miséria, e colocou os meus pés sobre uma rocha." — Salmos 40:2',
+    '"Porque os que esperam no Senhor renovarão as suas forças; subirão com asas como águias; correrão, e não se cansarão; andarão, e não se fatigarão." — Isaías 40:31',
+    '"Lança sobre ele toda a vossa ansiedade, porque ele tem cuidado de vós." — 1 Pedro 5:7',
+    '"Porque o Senhor é justo, e ama a justiça; os retos verão a sua face." — Salmos 11:7',
+    '"O Senhor te guiará continuamente, e fartará a tua alma nos lugares áridos, e fortificará os teus ossos; e serás como um jardim regado, como um manancial cujas águas nunca falham." — Isaías 58:11',
+    '"Em tudo dai graças; porque esta é a vontade de Deus em Cristo Jesus para vós." — 1 Tessalonicenses 5:18',
+    '"O Senhor é o meu refúgio e a minha fortaleza, meu Deus, em quem confio." — Salmos 91:2',
+    '"O Senhor é bom para todos, e as suas misericórdias estão sobre todas as suas obras." — Salmos 145:9',
+    '"O Senhor me ouve quando clamo por ele." — Salmos 4:3',
+    '"Não te deixarás abalar por temores de noite nem pela seta que voa de dia." — Salmos 91:5',
+    '"O Senhor está perto dos que têm o coração quebrantado e salva os de espírito abatido." — Salmos 34:18',
+    '"Porque a nossa leve e momentânea tribulação produz para nós um peso eterno de glória, muito excelente." — 2 Coríntios 4:17',
+    '"Bem-aventurados os que choram, porque serão consolados." — Mateus 5:4',
+    '"O Senhor é meu pastor; nada me faltará." — Salmos 23:1',
+    '"Ele acalma a tempestade, e as ondas se aquietam." — Salmos 107:29',
+    '"O Senhor é a minha força e o meu cântico, ele é a minha salvação." — Êxodo 15:2',
+    '"Aquele que habita no esconderijo do Altíssimo, à sombra do Onipotente descansará." — Salmos 91:1',
+    '"O Senhor é bom, é uma fortaleza no dia da angústia, e conhece os que nele confiam." — Naum 1:7'
+];
 
-        const mensagens = [
-            '"Você é incrível do jeitinho que é, e tenho sorte de compartilhar a vida ao seu lado" ❤️',
-            '"A cada dia ao seu lado é um presente. Eu te amo muito, Anna Júlia!" ❤️',
-            '"Nosso amor é um presente que eu agradeço todos os dias. Você é a razão do meu sorriso." ❤️',
-            '"Eu agradeço a Deus por cada momento ao seu lado. Você é a melhor parte do meu dia." ❤️'
-        ];
+
+const mensagens = [
+    '"Cada dia contigo é sempre melhor." ❤️‍🔥',
+    '"Com você, tudo parece mais tranquilo." 🤍',
+    '"Te ter por perto faz a diferença." 💘',
+    '"A vida ao seu lado é sempre mais leve." 💗',
+    '"Você é uma das melhores partes do meu dia." 💓',
+    '"Simplesmente sou grato por você." ❤️‍🔥',
+    '"Estar com você é sempre um alívio." 🤍',
+    '"Sua companhia torna tudo mais fácil." 💘',
+    '"Cada momento contigo é algo que eu prezo." 💗',
+    '"Você me traz o equilíbrio que preciso." 💓',
+    '"Nossa conexão é a melhor parte do meu dia." ❤️‍🔥',
+    '"Ao seu lado, tudo parece mais certo." 🤍',
+    '"Você tem a capacidade de me acalmar." 💘',
+    '"Fico mais tranquilo quando estou com você." 💗',
+    '"Sua presença tem um impacto positivo em mim." 💓',
+    '"Você me ajuda a ver as coisas de outra forma." ❤️‍🔥',
+    '"Admiro muito sua maneira de ser." 🤍',
+    '"O tempo parece passar mais rápido ao seu lado." 💘',
+    '"Você torna qualquer momento mais agradável." 💗',
+    '"Agradeço por sua companhia, todos os dias." 💓',
+    '"Com você, os dias são mais fáceis de enfrentar." ❤️‍🔥',
+    '"Sua amizade faz a diferença na minha vida." 🤍',
+    '"Estar com você me faz sentir em paz." 💘',
+    '"Eu sou mais feliz com sua presença." 💗',
+    '"Você tem um jeito de tornar tudo mais claro." 💓',
+    '"Sua forma de ver o mundo é inspiradora." ❤️‍🔥',
+    '"A vida parece mais simples quando estamos juntos." 🤍',
+    '"Você é alguém em quem posso confiar." 💘',
+    '"Nada é mais reconfortante do que estar com você." 💗',
+    '"Sua forma de ser sempre me inspira." 💓',
+    '"Estar ao seu lado traz uma sensação de segurança." ❤️‍🔥',
+    '"Você sempre me faz ver o lado positivo das coisas." 🤍',
+    '"A sua presença tem um impacto positivo no meu dia." 💘',
+    '"Nada se compara a um bom momento contigo." 💗',
+    '"Com você, tudo se torna mais simples." 💓',
+    '"Eu aprecio muito a sua companhia." ❤️‍🔥',
+    '"Você tem a capacidade de fazer meu dia melhor." 🤍',
+    '"Estar com você é sempre uma boa escolha." 💘',
+    '"Com você, tudo se encaixa de forma natural." 💗',
+    '"Eu sou grato por te ter ao meu lado." 💓',
+    '"Nossa amizade me dá forças." ❤️‍🔥',
+    '"Você é uma das poucas coisas que sempre traz tranquilidade." 🤍',
+    '"Eu realmente aprecio sua presença." 💘',
+    '"Sua calma é contagiante." 💗',
+    '"Nada melhor do que estar perto de quem se importa." 💓',
+    '"Eu sou feliz pelo simples fato de ter você por perto." ❤️‍🔥',
+    '"Com você, cada momento é mais valioso." 🤍',
+    '"A vida tem mais sentido com você por perto." 💘',
+    '"A sua companhia me traz paz de espírito." 💗',
+    '"Sua forma de ver o mundo torna tudo mais leve." 💓',
+    '"Estar com você me faz sentir que tudo vai dar certo." ❤️‍🔥',
+    '"Você faz as coisas simples se tornarem especiais." 🤍',
+    '"Eu sou mais calmo quando estou com você." 💘',
+    '"Sua amizade é um presente que sempre valorizo." 💗',
+    '"Você tem o poder de transformar um dia ruim." 💓',
+    '"Com você, qualquer momento se torna significativo." ❤️‍🔥',
+    '"Eu me sinto bem quando estou ao seu lado." 🤍',
+    '"Você me ajuda a ver o mundo de maneira mais clara." 💘',
+    '"Sua companhia me faz sentir acolhido." 💗',
+    '"Com você, tudo parece mais fácil de lidar." 💓',
+    '"Você é uma pessoa com quem é bom contar." ❤️‍🔥',
+    '"Cada conversa contigo é uma oportunidade de aprender." 🤍',
+    '"Você tem a capacidade de trazer tranquilidade a qualquer lugar." 💘',
+    '"Estar com você é sempre uma boa decisão." 💗',
+    '"Com você, a vida parece ter mais sentido." 💓',
+    '"Nada é mais reconfortante do que a sua presença." ❤️‍🔥',
+    '"Eu sou mais feliz com você ao meu lado." 🤍',
+    '"Sua companhia sempre faz a diferença no meu dia." 💘',
+    '"Eu sou grato por cada momento que passamos juntos." 💗',
+    '"Estar com você traz uma sensação de paz." 💓',
+    '"Você torna minha vida mais tranquila." ❤️‍🔥',
+    '"Cada momento contigo me ensina a ser uma pessoa melhor." 🤍',
+    '"Sua amizade é algo que eu sempre valorizo." 💘',
+    '"Com você, tudo se torna mais claro." 💗',
+    '"Estar ao seu lado é o que faz os momentos valerem a pena." 💓',
+    '"Eu me sinto mais forte por ter você comigo." ❤️‍🔥',
+    '"Com você, cada dia é uma nova oportunidade." 🤍',
+    '"A sua amizade é um alicerce que sempre me sustenta." 💘',
+    '"Você sempre me faz ver o melhor das situações." 💗',
+    '"Estar com você me faz sentir que tudo vai dar certo." 💓'
+];
+
+
 
         function atualizarConteudo() {
             const versiculo = versiculos[Math.floor(Math.random() * versiculos.length)];
@@ -253,7 +391,7 @@
             document.getElementById('mensagem').innerText = mensagem;
         }
 
-        setInterval(atualizarConteudo, 50000); // Atualiza a cada 50 segundos
+        setInterval(atualizarConteudo, 20000); // Atualiza a cada 20 segundos
 
     </script>
 </body>
