@@ -382,6 +382,16 @@ const mensagens = [
     '"Estar com você me faz sentir que tudo vai dar certo." 💓'
 ];
 
+        function atualizarConteudo() {
+            const versiculo = versiculos[Math.floor(Math.random() * versiculos.length)];
+            const mensagem = mensagens[Math.floor(Math.random() * mensagens.length)];
+
+            document.getElementById('versiculo').innerText = versiculo;
+            document.getElementById('mensagem').innerText = mensagem;
+        }
+
+        setInterval(atualizarConteudo, 20000); // Atualiza a cada 20 segundos
+
 
         const versiculoElement = document.getElementById('versiculo');
         const mensagemElement = document.getElementById('mensagem');
